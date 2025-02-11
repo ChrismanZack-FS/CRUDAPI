@@ -1,0 +1,33 @@
+GET http://localhost:8000/students
+
+###
+
+GET http://localhost:8000/students/67aa7769c32fc9a6401d9915
+
+###
+
+POST http://localhost:8000/students
+Content-Type: application/json
+
+{
+    "name": "Bill",
+    "class": "DWA"
+}
+
+
+###
+
+
+DELETE http://localhost:8000/students/67aa7866f96efaa603feb3ca
+
+
+###
+
+
+PATCH http://localhost:8000/students/67aa789a5e7bd3811b73bfcc
+Content-Type: application/json
+
+{
+    "name": "Zack Chrisman",
+    "class": "DWA"
+}
