@@ -1,33 +1,33 @@
-GET http://localhost:8000/students
+GET http://localhost:8000/units
 
 ###
 
-GET http://localhost:8000/students/67aa7769c32fc9a6401d9915
+GET http://localhost:8000/units/67accf2a14f8d7277d62640c
 
 ###
 
-POST http://localhost:8000/students
+POST http://localhost:8000/units
 Content-Type: application/json
 
 {
-    "name": "Bill",
-    "class": "DWA"
+    "name": "Scouts",
+    "faction": "Space Marine"
 }
 
 
 ###
 
 
-DELETE http://localhost:8000/students/67aa7866f96efaa603feb3ca
+DELETE http://localhost:8000/units/67accf2a14f8d7277d62640c
 
 
 ###
 
 
-PATCH http://localhost:8000/students/67aa789a5e7bd3811b73bfcc
+PATCH http://localhost:8000/units/67accf2a14f8d7277d62640c
 Content-Type: application/json
 
 {
-    "name": "Zack Chrisman",
-    "class": "DWA"
+    "name": "Deathwing Knights",
+    "class": "Dark Angel"
 }
