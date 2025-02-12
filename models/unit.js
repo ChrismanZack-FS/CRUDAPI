@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const studentSchema = new mongoose.Schema({
+const unitSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		required: true,
 	},
-	class: {
+	faction: {
 		type: String,
 		required: true,
 	},
@@ -16,4 +16,4 @@ const studentSchema = new mongoose.Schema({
 	},
 });
 
-module.exports = mongoose.model("Student", studentSchema);
+module.exports = mongoose.model("Unit", unitSchema);
