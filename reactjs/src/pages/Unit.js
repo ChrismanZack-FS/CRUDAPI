@@ -1,6 +1,7 @@
 import "../App.css";
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import "../styles.scss";
 
 function Unit() {
 	const [units, setUnits] = useState(null);
@@ -97,11 +98,17 @@ function Unit() {
 				<h2>{values && values.name}</h2>
 				<h5>{values && values.faction}</h5>
 				<h5>{values && values.type}</h5>
-				<button onClick={() => deleteUnit()}>Delete Unit</button>
-				<Link to="/">Home</Link>
-				<Link to="/dashboard"></Link>
+				<button onClick={() => deleteUnit()} className="button">
+					Delete Unit
+				</button>
+				<Link to="/" className="nav-link">
+					Home
+				</Link>
+				<Link to="/dashboard" className="nav-link">
+					Dashboard
+				</Link>
 
-				<form onSubmit={(event) => handleSubmit(event)}>
+				<form onSubmit={(event) => handleSubmit(event)} className="unit-form">
 					<label>
 						Name:
 						<input
@@ -109,6 +116,7 @@ function Unit() {
 							name="name"
 							value={values.name}
 							onChange={handleInputChange}
+							className="input-field"
 						/>
 					</label>
 					<label>
@@ -118,6 +126,7 @@ function Unit() {
 							name="faction"
 							value={values.faction}
 							onChange={handleInputChange}
+							className="input-field"
 						/>
 					</label>
 					<label>
@@ -127,9 +136,10 @@ function Unit() {
 							name="type"
 							value={values.type}
 							onChange={handleInputChange}
+							className="input-field"
 						/>
 					</label>
-					<input type="submit" value="Submit" />
+					<input type="submit" value="Submit" className="button" />
 				</form>
 			</header>
 		</div>

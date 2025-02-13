@@ -1,0 +1,98 @@
+// Warhammer 40K Theme Colors
+$primary-bg: #1a1a1a; // Dark metallic gray background
+$gold: #b8860b; // Imperial gold
+$blood-red: #8b0000; // Chaos red
+$bone: #d7c7a2; // Bone white for text
+$necron-green: #009400; // Necron glow
+
+// Remove bullets from ordered lists
+ul {
+	list-style-type: none;
+	padding-left: 0; // Removes the left padding for alignment
+}
+
+// Add color to h1
+h1,
+h3,
+h5,
+h2 {
+	color: $necron-green; // Change to your desired color variable or hex code
+}
+
+// Navigation Links
+.nav-link {
+	color: $necron-green;
+	font-weight: bold;
+	text-decoration: none;
+	transition: 0.3s;
+
+	&:hover {
+		color: ($necron-green, 10%);
+		text-decoration: none;
+	}
+}
+.dashboard-link {
+	color: $gold;
+	font-weight: bold;
+	transition: 0.3s;
+
+	&:hover {
+		color: ($gold, 10%);
+		text-decoration: underline;
+	}
+}
+
+.unit-link {
+	color: $gold;
+	font-weight: bold;
+	transition: 0.3s;
+
+	&:hover {
+		color: ($gold, 10%);
+		text-decoration: underline;
+	}
+}
+
+// Form Styles
+.unit-form {
+	background: rgba(0, 0, 0, 0.5);
+	margin-top: 20px;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center; // Centers child elements horizontally
+	justify-content: center; //
+}
+
+.input-field {
+	background: #222;
+	color: $bone;
+	border: 1px solid $gold;
+	padding: 8px;
+	margin: 10px 0;
+	width: 80%;
+	max-width: 400px;
+	text-align: center;
+}
+
+.button {
+	display: inline-block;
+	background: linear-gradient(135deg, $gold, ($gold, 15%));
+	color: black;
+	padding: 12px 24px;
+	font-weight: bold;
+	border: 2px solid $gold;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+	text-transform: uppercase;
+	text-align: center;
+
+	&:hover {
+		background: ($gold, 10%);
+		box-shadow: 0px 0px 10px $blood-red;
+		transform: scale(1.05);
+	}
+}
