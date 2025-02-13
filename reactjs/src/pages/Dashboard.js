@@ -1,6 +1,7 @@
 import "../App.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "../styles.scss";
 
 function Dashboard() {
 	const [units, setUnits] = useState(null);
@@ -70,17 +71,21 @@ function Dashboard() {
 		<div className="App">
 			<header className="App-header">
 				<h1>Units:</h1>
-				<Link to="/">Home</Link>
+				<Link to="/" className="nav-link">
+					Home
+				</Link>
 
 				<ul>
 					{units &&
 						units.map((unit) => (
 							<li key={unit._id}>
-								<Link to={`/units/${unit._id}`}>{unit.name}</Link>
+								<Link to={`/units/${unit._id}`} className="unit-link">
+									{unit.name}
+								</Link>
 							</li>
 						))}
 				</ul>
-				<form onSubmit={(event) => handleSubmit(event)}>
+				<form onSubmit={(event) => handleSubmit(event)} className="unit-form">
 					<label>
 						Name:
 						<input
@@ -88,6 +93,7 @@ function Dashboard() {
 							name="name"
 							value={values.name}
 							onChange={handleInputChange}
+							className="input-field"
 						/>
 					</label>
 					<label>
@@ -97,6 +103,7 @@ function Dashboard() {
 							name="faction"
 							value={values.faction}
 							onChange={handleInputChange}
+							className="input-field"
 						/>
 					</label>
 					<label>
@@ -106,9 +113,10 @@ function Dashboard() {
 							name="type"
 							value={values.type}
 							onChange={handleInputChange}
+							className="input-field"
 						/>
 					</label>
-					<input type="submit" value="Submit" />
+					<input type="submit" value="Submit" className="button" />
 				</form>
 			</header>
 		</div>

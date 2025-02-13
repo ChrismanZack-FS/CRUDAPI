@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Unit from "./pages/Unit";
+import "./styles.scss";
 
 function App() {
 	return (
