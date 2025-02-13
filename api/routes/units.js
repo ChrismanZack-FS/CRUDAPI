@@ -9,14 +9,15 @@ const getUnit = async (req, res, next) => {
 	let unit;
 	try {
 		unit = await Unit.findById(req.params.id);
-		if (unit === null) {
+		if (unit == null) {
 			return res.status(404).json({ message: "Unit not found." });
 		}
+		res.unit = unit;
+		next();
 	} catch (error) {
+		console.error("Error fetching unit:", error);
 		return res.status(500).json({ message: error.message });
 	}
-	res.unit = unit;
-	next();
 };
 
 // GET ALL
@@ -39,6 +40,7 @@ router.post("/", async (req, res) => {
 	const unit = new Unit({
 		name: req.body.name,
 		faction: req.body.faction,
+		type: req.body.type,
 	});
 
 	try {
@@ -56,6 +58,9 @@ router.patch("/:id", getUnit, async (req, res) => {
 	}
 	if (req.body.faction != null) {
 		res.unit.faction = req.body.faction;
+	}
+	if (req.body.type != null) {
+		res.unit.type = req.body.type;
 	}
 	try {
 		const updatedUnit = await res.unit.save();

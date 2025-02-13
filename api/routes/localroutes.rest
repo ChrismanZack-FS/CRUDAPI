@@ -1,4 +1,4 @@
-GET http://localhost:8000/units
+GET http://localhost:8000/api/v1/units
 
 ###
 
@@ -6,28 +6,30 @@ GET http://localhost:8000/units/67accf2a14f8d7277d62640c
 
 ###
 
-POST http://localhost:8000/units
+POST http://localhost:8000/api/v1/units
 Content-Type: application/json
 
 {
     "name": "Scouts",
-    "faction": "Space Marine"
+    "faction": "Space Marine",
+    "type":"Infantry"
 }
 
 
 ###
 
 
-DELETE http://localhost:8000/units/67accf2a14f8d7277d62640c
+DELETE http://localhost:8000/api/v1/units/67accf2a14f8d7277d62640c
 
 
 ###
 
 
-PATCH http://localhost:8000/units/67accf2a14f8d7277d62640c
+PATCH http://localhost:8000/api/v1/units/67accf2a14f8d7277d62640c
 Content-Type: application/json
 
 {
     "name": "Deathwing Knights",
-    "class": "Dark Angel"
+    "class": "Dark Angel",
+    "type":"Infantry"
 }

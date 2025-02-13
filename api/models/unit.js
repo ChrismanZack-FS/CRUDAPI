@@ -9,6 +9,10 @@ const unitSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	type: {
+		type: String,
+		required: true,
+	},
 	created_at: {
 		type: Date,
 		required: true,
